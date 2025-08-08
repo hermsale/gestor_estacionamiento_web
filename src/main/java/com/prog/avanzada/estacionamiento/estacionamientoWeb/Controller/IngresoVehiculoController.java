@@ -77,7 +77,7 @@ public class IngresoVehiculoController {
 
         model.addAttribute("mensaje", "Vehículo ingresado correctamente");
 
-        // Mejor redirigir para evitar doble submit:
-        return "redirect:/"; // redirige a la raíz, o a donde quieras
+
+        return "redirect:/";
     }
 }

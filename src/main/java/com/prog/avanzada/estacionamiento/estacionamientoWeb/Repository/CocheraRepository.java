@@ -14,5 +14,4 @@ public interface CocheraRepository extends JpaRepository<Cochera, Long> {
 
     Optional<Cochera> findByCodigoCochera(int codigoCochera);
 
-
 }

@@ -42,6 +42,7 @@ public class CocheraService {
     }
     public Cochera ingresarVehiculo(Cochera cochera) {
 
+//        busco el servicio en el repo por ID o descripcion
         Servicio servicioPersistido;
         if (cochera.getServicio().getIdServicio() != null) {
             servicioPersistido = servicioRepository.findById(cochera.getServicio().getIdServicio())
@@ -51,6 +52,7 @@ public class CocheraService {
                     .orElseThrow(() -> new RuntimeException("Servicio no encontrado por descripción"));
         }
 
+        //        busco el contrato en el repo por ID o descripcion
         TipoContrato contratoPersistido;
         if (cochera.getContrato().getIdTipoContrato() != null) {
             contratoPersistido = tipoContratoRepository.findById(cochera.getContrato().getIdTipoContrato())

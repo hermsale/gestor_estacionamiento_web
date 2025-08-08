@@ -20,7 +20,7 @@ public class EstacionamientoWebApplication {
 //
 //	Si no existe, lo crea con contraseña "admin123" encriptada con BCrypt.
 //
-//	Si ya existe, lo deja sin tocar.
+//	Si ya existe, lo deja
 	@Bean
 	CommandLineRunner init(UsuarioRepository repo, BCryptPasswordEncoder encoder) {
 		return args -> {
@@ -29,7 +29,7 @@ public class EstacionamientoWebApplication {
 				user.setNombre("Admin");
 				user.setApellido("Principal");
 				user.setUsername("admin");
-				user.setPassword(encoder.encode("admin123")); // ¡Encriptado!
+				user.setPassword(encoder.encode("admin123"));
 				user.setRol("ADMIN");
 				repo.save(user);
 				System.out.println("🟢 Usuario admin creado correctamente.");

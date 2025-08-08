@@ -1,14 +1,14 @@
 package com.prog.avanzada.estacionamiento.estacionamientoWeb.Controller;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MenuPrincipalController {
+public class LoginController {
 
-    @GetMapping("/")
-    public String mostrarMenu() {
-        return "menuPrincipal";
+    @GetMapping("/login")
+    public String mostrarLogin() {
+        return "login";
     }
+
 }

@@ -23,13 +23,17 @@ public class SecurityConfig {
 
         http
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/login").permitAll()
                         .requestMatchers("/", "/ingresoVehiculo", "/retiroVehiculo", "/reportes")
                         .hasRole("ADMIN")   // Solo usuarios con rol ADMIN pueden acceder
                         .anyRequest()
                         .authenticated()
                 )
                 .csrf(csrf -> csrf.disable())
-                .formLogin(Customizer.withDefaults())
+                .formLogin(form -> form
+                        .loginPage("/login") // tu vista personalizada
+                        .defaultSuccessUrl("/", true)
+                        .permitAll())
                 .logout(Customizer.withDefaults());
 
         return http.build();
